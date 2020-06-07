@@ -1,12 +1,40 @@
 # Fundamentos de C
-Anotações do curso de Algorítmos e Lógica de Programação II do curso Bacharelado em Engenharia de Software
+Fundamentos de C, elaborado a partir da disciplina Algorítmos e Lógica de Programação II, no Bacharelado em Engenharia de Software da UniCesumar.
 
-## Constantes
+## Importando Bibliotecas
+
+As bibliotecas são importadas no início do programa com a seguinte sintaxe:
+
+    #include <studio.h> // entrada/saida de dados
+    #include <stdlib.h> // funçções de chamada de sistema
+    #include <math.h> // operações matemáticas
+
+## Definindo Constantes
+
+Logo após, são declaradas as constantes globais:
 
     #define PI 3.1416
     #define MSG_ERRO "Erro!"
 
+## Definição da função principal
+
+Essa é a extrutura principal de um programa em C. As variáveis e demais estruturas serão definidas dentro do escopo de main().
+
+      int main(){
+          /* code */
+      }
+
 ## Declaração de variável
+
+O tipo da variável deve ser definido antes do nome da variável, sendo:
+
+* inteiro: int
+* decimal: float
+* caractere: char
+* string: char[numero] // numero é o tamanho da string
+* booleano: bool
+
+Exemplo:
 
     int idade, ano, ano_atual;
     float salario;
@@ -15,10 +43,18 @@ Anotações do curso de Algorítmos e Lógica de Programação II do curso Bacha
 
 ## Atribuição de variável
 
+Utiliza-se o sinal = para atribuir um valor a uma variável:
+
     ano_atual = 2020;
     ano = 1989;
     idade = ano_atual - ano;
 
+A atribuição pode ser realizada na mesma linha da declaração, por exemplo:
+
+    int idade = 18, ano = 2020;
+    float salario = 3500.50;
+    char nome[20] = "o pão é meu." 
+    bool brasileiro = true;
 
 ## Operadores aritiméticos
 
@@ -47,11 +83,6 @@ Anotações do curso de Algorítmos e Lógica de Programação II do curso Bacha
 * OR: ||
 
 
-## Bibliotecas
-    #include <studio.h> // entrada/saida de dados
-    #include <stdlib.h> // funçções de chamada de sistema
-    #include <math.h> // operações matemáticas
-
 
 ## Funções intrínsecas
 
@@ -66,13 +97,7 @@ Anotações do curso de Algorítmos e Lógica de Programação II do curso Bacha
 * printf("texto") // imprimir em tela
 * scanf("%d", &x) // ler o que foi digitado (tipo de dado, variavel)
 
-      int main(){
-       float A = 4, Resultado;
-       Resultado = sqrt(A);
-      }
-
-
-##Entrada e saída de dados
+## Entrada e saída de dados
 
 * Leitura a partir do teclado
   
@@ -84,13 +109,11 @@ Anotações do curso de Algorítmos e Lógica de Programação II do curso Bacha
 
 
 ## Especificadores de formato
-* %d imprimir/ler int
+* %d ou %i imprimir/ler int
 * %f imprimir/ler float
 * %e ou %lf imprimir/ler double
 * %c imprimir/ler char
 * %s imprimir/ler vetor de char (string)
-
-
 
 ## Tabulação de texto
 * \n pula linha
@@ -99,4 +122,55 @@ Anotações do curso de Algorítmos e Lógica de Programação II do curso Bacha
 * '   ' indica um espaço
 * \t insere um tab
 * \b recua um tab
-* \f salta de pagina de formulário
+* \f salta de pagina de 
+
+# Estruturas condicionais
+
+## If else
+
+    if (/* condition */){
+        /* code */
+    } else {
+        /* code */
+    }
+
+## Switch
+
+    switch (option){
+    case 1: /* code */;
+        break;
+
+    case 2: /* code */;
+        break;
+
+    case 3: /* code */;
+        break;
+
+    case 4: /* code */;
+        break;
+
+    default: printf("Opção inválida. \n");
+        break;
+    }
+
+# Estruturas de repetição
+
+## For
+    
+    int i;
+    for (i = 0; i < count; i++){
+        /* code */
+    } 
+
+    Obs: Quando não for determinado o incremento, o padrão é +1.
+
+## While
+
+Ao contrário do for, o índice deve ser inicializado antes do while e o incremento de ve ser realizado dentro do escopo.
+
+    int i = 0;
+    while (i < 100){
+        /* code */
+        i = i+1;
+    }
+

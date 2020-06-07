@@ -1,21 +1,26 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
 #define NIVEL_MINIMO_CAIXA 10
 #define NIVEL_MAXIMO_CAIXA 980
     
-int main(void)
-{
-    float nivelMinimoCaixa, nivelMaximoCaixa, nivelMedicao;
+int main(void){
+
+    int nivelMedicao;
+   
     printf("Informe o nível da medicao: ");
-    scanf("%f", &nivelMedicao);
-    char mensagem[30];
+    scanf("%d", &nivelMedicao);
     
-    if (NIVEL_MINIMO_CAIXA >= nivelMedicao){
-        mensagem = "Ligar Bomba";
-    }else if (nivelMedicao >= NIVEL_MAXIMO_CAIXA){
-        mensagem = "Desligar Bomba";
-    }else{
-        mensagem = "Manter Bomba ligada";
-    }    
-    printf("%s", mensagem);
+    if (nivelMedicao <= NIVEL_MINIMO_CAIXA){
+        printf("ligar \n");
+    } else if (nivelMedicao >= NIVEL_MAXIMO_CAIXA){
+        printf("desligar \n");
+    } else{
+        printf("manter \n");
+    }
+
+    getch();
+    return 0;
+
 }
