@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-int main(void)
-{
+int main (void) {
   float num;
   printf("Menu:\n1- X-Bacon\n2- X-Salada\nEscolha seu pedido, e aperte Enter:\n");
   scanf("%f", &num);
@@ -14,11 +13,11 @@ int main(void)
   else if (num == 2)
   {
     printf("X-Salada - Preço: R$ 15.00\n");
-  } else 
+  }
+  else
   {
     printf("Sanduba não encontrado\n");
   }
-  
 }
 
 /* A lanchonete KIKO está informatizando o seu sistema de atendimento ao aluno, e necessita que seja realizado um módulo de vendas, um de controle de estoque e um de contas a pagar. O sistema será realizado em parceria com os alunos dos cursos de TI da universidade. Cada curso ficará responsável por um módulo do sistema, contudo, todos deverá utilizar a linguagem C como a linguagem de programação. A sua participação neste sistema será apenas no módulo de vendas, ou seja, abstraia os outros módulos. 
