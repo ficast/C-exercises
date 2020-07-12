@@ -48,8 +48,17 @@ struct book
 int main()
 {
 
-  int option = 0, i = 0, j = 0, k = 0, l = 0, box;
+  int option = 0, i = 1, j = 0, box;
   struct book listOfBooks[5];
+
+  listOfBooks[0].item = 1;
+  listOfBooks[0].title[50] = "Lord of The Rings";
+  listOfBooks[0].writer[50] = "J.R.R.Tolkien";
+  listOfBooks[0].press[50] = "Martins Fontes";
+  listOfBooks[0].year = 2002;
+  listOfBooks[0].quantity = 2;
+  listOfBooks[0].box = 2;
+  listOfBooks[0].type = 1;
 
   while (option != 5)
   {
@@ -104,15 +113,15 @@ int main()
 
     case 3:
       system("clear");
-      for (k = 0; k < i; k++)
+      for (j = 0; j < i; j++)
       {
-        if (listOfBooks[k].type == 2)
+        if (listOfBooks[j].type == 2)
         {
           printf("*******************************************************\n");
-          printf("Título: %s\n", listOfBooks[k].title);
-          printf("Autor: %s\n", listOfBooks[k].writer);
-          printf("Editora: %s\n", listOfBooks[k].press);
-          printf("Ano: %d\n\n", listOfBooks[k].year);
+          printf("Título: %s\n", listOfBooks[j].title);
+          printf("Autor: %s\n", listOfBooks[j].writer);
+          printf("Editora: %s\n", listOfBooks[j].press);
+          printf("Ano: %d\n\n", listOfBooks[j].year);
         }
       }
       break;
@@ -121,15 +130,15 @@ int main()
       system("clear");
       printf("Digite o número da caixa");
       scanf("%d", &box);
-      for (l = 0; l < i; l++)
+      for (j = 0; j < i; j++)
       {
-        if (listOfBooks[l].box == box)
+        if (listOfBooks[j].box == box)
         {
           printf("*******************************************************\n");
-          printf("Título: %s\n", listOfBooks[l].title);
-          printf("Autor: %s\n", listOfBooks[l].writer);
-          printf("Editora: %s\n", listOfBooks[l].press);
-          printf("Ano: %d\n\n", listOfBooks[l].year);
+          printf("Título: %s\n", listOfBooks[j].title);
+          printf("Autor: %s\n", listOfBooks[j].writer);
+          printf("Editora: %s\n", listOfBooks[j].press);
+          printf("Ano: %d\n\n", listOfBooks[j].year);
         }
       }
       break;
