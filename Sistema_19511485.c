@@ -61,7 +61,7 @@ int main()
                        "Rocco",
                        2002,
                        3,
-                       2,
+                       3,
                        1};
 
   struct book book3 = {3,
@@ -70,10 +70,28 @@ int main()
                        "Rocco",
                        2002,
                        3,
+                       1,
+                       1};
+
+  struct book book4 = {4,
+                       "Harry Potter e as Relíquias da Morte",
+                       "J.K.Rowling",
+                       "Rocco",
+                       2002,
+                       3,
+                       3,
+                       1};
+
+  struct book book5 = {5,
+                       "Código Limpo",
+                       "Robert Martin",
+                       "Alta books",
+                       2002,
+                       2,
                        2,
                        1};
 
-  struct book magazine1 = {4,
+  struct book magazine1 = {6,
                            "Globo Ciência",
                            "Vários",
                            "Globo",
@@ -82,7 +100,7 @@ int main()
                            1,
                            2};
 
-  struct book magazine2 = {5,
+  struct book magazine2 = {7,
                            "Pequenas empresas Grandes negócios",
                            "Vários",
                            "Abril",
@@ -91,26 +109,37 @@ int main()
                            2,
                            2};
 
-  int option = 0, i = 5, j = 0, box;
-  struct book listOfBooks[10] = {
-      book1, book2, book3, magazine1, magazine2};
+  struct book magazine3 = {8,
+                           "Playboy",
+                           "Vários",
+                           "Abril",
+                           2013,
+                           20,
+                           1,
+                           2};
 
-  // listOfBooks[0] = book1;
-  // listOfBooks[1] = book2;
-  // listOfBooks[2] = book3;
-  // listOfBooks[3] = magazine1;
-  // listOfBooks[4] = magazine2;
+  struct book magazine4 = {9,
+                           "Exame",
+                           "Vários",
+                           "Abril",
+                           2013,
+                           11,
+                           2,
+                           2};
 
-  // listOfBooks[0].item = 1;
-  // listOfBooks[0].title[50] = "Lord of The Rings";
-  // listOfBooks[0].writer[50] = "J.R.R.Tolkien";
-  // listOfBooks[0].press[50] = "Martins Fontes";
-  // listOfBooks[0].year = 2002;
-  // listOfBooks[0].quantity = 2;
-  // listOfBooks[0].box = 2;
-  // listOfBooks[0].type = 1;
+  struct book magazine5 = {10,
+                           "Info",
+                           "Vários",
+                           "Abril",
+                           2013,
+                           11,
+                           3,
+                           2};
 
-  system("clear");
+  int option = 0, i = 10, j = 0, box = 0;
+  struct book listOfBooks[20] = {
+      book1, book2, book3, book4, book5, magazine1, magazine2, magazine3, magazine4, magazine5};
+
   while (option != 5)
   {
     printMenu();
@@ -205,7 +234,6 @@ int main()
       break;
 
     case 4:
-      system("clear");
       printf("Digite o número da caixa");
       scanf("%d", &box);
       for (j = 0; j < i; j++)
@@ -234,9 +262,6 @@ int main()
       printf("\n");
       printf("\n");
     default:
-      system("clear");
-      printf("Opção Inválida\n");
-      printf("Tente novamente\n");
       break;
     }
   }
