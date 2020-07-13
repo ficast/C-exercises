@@ -15,7 +15,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 4
 
 int printMenu()
 {
@@ -33,36 +32,89 @@ int printMenu()
   return 0;
 }
 
-struct book
-{
-  int item;
-  char *title[50];
-  char *writer[50];
-  char *press[50];
-  int year;
-  int quantity;
-  int box;
-  int type;
-};
-
 int main()
 {
+  struct book
+  {
+    int item;
+    char title[50];
+    char writer[50];
+    char press[50];
+    int year;
+    int quantity;
+    int box;
+    int type;
+  };
 
-  int option = 0, i = 1, j = 0, box;
-  struct book listOfBooks[5];
+  struct book book1 = {1,
+                       "The Lord Of The Rings",
+                       "J.R.R.Tolkien",
+                       "Martins Fontes",
+                       2002,
+                       2,
+                       1,
+                       1};
 
-  listOfBooks[0].item = 1;
-  listOfBooks[0].title[50] = "Lord of The Rings";
-  listOfBooks[0].writer[50] = "J.R.R.Tolkien";
-  listOfBooks[0].press[50] = "Martins Fontes";
-  listOfBooks[0].year = 2002;
-  listOfBooks[0].quantity = 2;
-  listOfBooks[0].box = 2;
-  listOfBooks[0].type = 1;
+  struct book book2 = {2,
+                       "Harry Potter e a Pedra Filosofal",
+                       "J.K.Rowling",
+                       "Rocco",
+                       2002,
+                       3,
+                       2,
+                       1};
 
+  struct book book3 = {3,
+                       "Harry Potter e a Câmara Secreta",
+                       "J.K.Rowling",
+                       "Rocco",
+                       2002,
+                       3,
+                       2,
+                       1};
+
+  struct book magazine1 = {4,
+                           "Globo Ciência",
+                           "Vários",
+                           "Globo",
+                           1999,
+                           10,
+                           1,
+                           2};
+
+  struct book magazine2 = {5,
+                           "Pequenas empresas Grandes negócios",
+                           "Vários",
+                           "Abril",
+                           2013,
+                           11,
+                           2,
+                           2};
+
+  int option = 0, i = 5, j = 0, box;
+  struct book listOfBooks[10] = {
+      book1, book2, book3, magazine1, magazine2};
+
+  // listOfBooks[0] = book1;
+  // listOfBooks[1] = book2;
+  // listOfBooks[2] = book3;
+  // listOfBooks[3] = magazine1;
+  // listOfBooks[4] = magazine2;
+
+  // listOfBooks[0].item = 1;
+  // listOfBooks[0].title[50] = "Lord of The Rings";
+  // listOfBooks[0].writer[50] = "J.R.R.Tolkien";
+  // listOfBooks[0].press[50] = "Martins Fontes";
+  // listOfBooks[0].year = 2002;
+  // listOfBooks[0].quantity = 2;
+  // listOfBooks[0].box = 2;
+  // listOfBooks[0].type = 1;
+
+  system("clear");
   while (option != 5)
   {
     printMenu();
+
     scanf("%d", &option);
     fflush(stdin);
 
@@ -71,7 +123,7 @@ int main()
     case 1:
       system("clear");
       listOfBooks[i].item = i + 1;
-      printf("Digite o título do livro:\n");
+      printf("\nDigite o título da publicação:\n");
       scanf("%s", &listOfBooks[i].title);
       fflush(stdin);
       printf("Digite o nome do autor:\n");
@@ -98,17 +150,29 @@ int main()
       system("clear");
       for (j = 0; j < i; j++)
       {
-        printf("%d", i);
-
         if (listOfBooks[j].type == 1)
         {
-          printf("*******************************************************\n");
-          printf("Título: %s\n", listOfBooks[j].title);
+          printf("\n************************************************************************\n");
+          printf("Título: %s", listOfBooks[j].title);
+          printf("                    ");
           printf("Autor: %s\n", listOfBooks[j].writer);
-          printf("Editora: %s\n", listOfBooks[j].press);
-          printf("Ano: %d\n\n", listOfBooks[j].year);
+          printf("Editora: %s", listOfBooks[j].press);
+          printf("                    ");
+          printf("Ano: %d\n", listOfBooks[j].year);
+          printf("Qtd: %d", listOfBooks[j].quantity);
+          printf("                    ");
+          printf("Caixa: %d", listOfBooks[j].box);
+          printf("                    ");
+          if (listOfBooks[j].type == 1)
+          {
+            printf("Tipo: Livro\n");
+          }
+          else
+            printf("Tipo: Revista\n");
         }
       }
+      printf("\n");
+      printf("\n");
       break;
 
     case 3:
@@ -117,13 +181,27 @@ int main()
       {
         if (listOfBooks[j].type == 2)
         {
-          printf("*******************************************************\n");
-          printf("Título: %s\n", listOfBooks[j].title);
+          printf("\n************************************************************************\n");
+          printf("Título: %s", listOfBooks[j].title);
+          printf("                    ");
           printf("Autor: %s\n", listOfBooks[j].writer);
-          printf("Editora: %s\n", listOfBooks[j].press);
-          printf("Ano: %d\n\n", listOfBooks[j].year);
+          printf("Editora: %s", listOfBooks[j].press);
+          printf("                    ");
+          printf("Ano: %d\n", listOfBooks[j].year);
+          printf("Qtd: %d", listOfBooks[j].quantity);
+          printf("                    ");
+          printf("Caixa: %d", listOfBooks[j].box);
+          printf("                    ");
+          if (listOfBooks[j].type == 1)
+          {
+            printf("Tipo: Livro\n");
+          }
+          else
+            printf("Tipo: Revista\n");
         }
       }
+      printf("\n");
+      printf("\n");
       break;
 
     case 4:
@@ -134,17 +212,34 @@ int main()
       {
         if (listOfBooks[j].box == box)
         {
-          printf("*******************************************************\n");
-          printf("Título: %s\n", listOfBooks[j].title);
+          printf("\n************************************************************************\n");
+          printf("Título: %s", listOfBooks[j].title);
+          printf("                    ");
           printf("Autor: %s\n", listOfBooks[j].writer);
-          printf("Editora: %s\n", listOfBooks[j].press);
-          printf("Ano: %d\n\n", listOfBooks[j].year);
+          printf("Editora: %s", listOfBooks[j].press);
+          printf("                    ");
+          printf("Ano: %d\n", listOfBooks[j].year);
+          printf("Qtd: %d", listOfBooks[j].quantity);
+          printf("                    ");
+          printf("Caixa: %d", listOfBooks[j].box);
+          printf("                    ");
+          if (listOfBooks[j].type == 1)
+          {
+            printf("Tipo: Livro\n");
+          }
+          else
+            printf("Tipo: Revista\n");
         }
       }
-      break;
-
+      printf("\n");
+      printf("\n");
     default:
+      system("clear");
+      printf("Opção Inválida\n");
+      printf("Tente novamente\n");
       break;
     }
   }
+  system("clear");
+  printf("Encerrando a aplicação...\n");
 }
